@@ -13,6 +13,30 @@ public class Scoreboard
         activeTeam = teamOne;
     }
 
+    public void recordPlay(int score)
+    {
+        if(teamOne.equals(activeTeam))
+        {
+            teamOneScore+=score;
+            if (score==0)
+            {
+                activeTeam = teamTwo;
+                //else if(activeTeam.equals(teamTwo)) activeTeam=teamOne;
+
+            }
+        }
+        if(teamTwo.equals(activeTeam))
+        {
+            teamTwoScore+=score;
+            if (score==0)
+            {
+                activeTeam = teamOne;
+                //else if(activeTeam.equals(teamOne)) activeTeam=teamTwo;
+
+            }
+        }
+    }   
+
     public String getScore()
     {
         return teamOneScore +"-" +teamTwoScore + "-" + activeTeam;
